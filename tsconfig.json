@@ -24,11 +24,13 @@
       "@utils/*": ["utils/*"],
       "@errors/*": ["errors/*"],
       "@middlewares/*": ["middlewares/*"],
+      "@interfaces/*": ["interfaces/*"],
       "@db": ["db"],
       "@api": ["api"],
       "@utils": ["utils"],
       "@errors": ["errors"],
-      "@middlewares": ["middlewares"]
+      "@middlewares": ["middlewares"],
+      "@interfaces": ["interfaces"]
     }
   },
   "exclude": ["node_modules"],

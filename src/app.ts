@@ -8,6 +8,7 @@ moduleAlias.addAliases({
   "@utils": `${__dirname}/utils`,
   "@errors": `${__dirname}/errors`,
   "@middlewares": `${__dirname}/middlewares`,
+  "@interfaces": `${__dirname}/interfaces`,
 });
 
 import server from "@root/server";

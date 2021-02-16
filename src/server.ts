@@ -4,10 +4,9 @@ import * as helmet from "helmet";
 import * as http from "http";
 
 import * as api from "./api";
-import { mError } from "./middlewares";
+import { errorHandler, parseQueryParams } from "@middlewares";
 
 import { getLogger, logHandler } from "./utils";
-
 export class Server {
   private app: express.Application;
   private server: http.Server;
@@ -34,9 +33,10 @@ export class Server {
   public async start() {
     return new Promise(async (resolve, reject) => {
       try {
-        await this.registerApi();
+        this.app.use(errorHandler);
+        this.app.get("*", parseQueryParams);
 
-        this.app.use(mError);
+        await this.registerApi();
 
         this.server = http.createServer(this.app);
 
